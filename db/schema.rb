@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181021040721) do
+ActiveRecord::Schema.define(version: 2018_12_01_205525) do
+
+  create_table "import_files", force: :cascade do |t|
+    t.string "file_name"
+    t.datetime "uploaded_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "imported_files", force: :cascade do |t|
-    t.string   "file_name",   null: false
+    t.string "file_name", null: false
     t.datetime "import_date", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
